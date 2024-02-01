@@ -1,0 +1,14 @@
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/bin/Debug/net6.0/ShoppingWeb.Repository.deps.json
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/bin/Debug/net6.0/ShoppingWeb.Repository.runtimeconfig.json
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/bin/Debug/net6.0/ShoppingWeb.Repository.dll
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/bin/Debug/net6.0/ShoppingWeb.Repository.pdb
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/Debug/net6.0/ShoppingWeb.Repository.csproj.AssemblyReference.cache
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/Debug/net6.0/ShoppingWeb.Repository.GeneratedMSBuildEditorConfig.editorconfig
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/Debug/net6.0/ShoppingWeb.Repository.AssemblyInfoInputs.cache
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/Debug/net6.0/ShoppingWeb.Repository.AssemblyInfo.cs
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/Debug/net6.0/ShoppingWeb.Repository.csproj.CoreCompileInputs.cache
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/Debug/net6.0/ShoppingWeb.Repository.dll
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/Debug/net6.0/refint/ShoppingWeb.Repository.dll
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/Debug/net6.0/ShoppingWeb.Repository.pdb
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/Debug/net6.0/ShoppingWeb.Repository.genruntimeconfig.cache
+/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/Debug/net6.0/ref/ShoppingWeb.Repository.dll
