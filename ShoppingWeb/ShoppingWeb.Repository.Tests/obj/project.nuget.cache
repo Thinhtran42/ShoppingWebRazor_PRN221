@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VbJ0V44XiApfVF3k89T3EBFFJlUB3cRQ1PhmzC2GcnpUpiD8cXiQ2XINcmAsqut8/nNNbO0Nctf/MmQJ3kDdVA==",
+  "dgSpecHash": "B85ETFMjtlFcyl3gkgqmWldnB/cz7MDY003QnRANmGMan+uoIfpLqpdMVaDILBxLDV0uoOINS8RQy0T9qAedxw==",
   "success": true,
-  "projectFilePath": "/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository.Tests/ShoppingWeb.Repository.Tests.csproj",
+  "projectFilePath": "/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Repository.Tests/ShoppingWeb.Repository.Tests.csproj",
   "expectedPackageFiles": [
     "/Users/thinhtran/.nuget/packages/autofixture/4.18.1/autofixture.4.18.1.nupkg.sha512",
     "/Users/thinhtran/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",

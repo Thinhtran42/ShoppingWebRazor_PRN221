@@ -5,7 +5,7 @@ namespace ShoppingWeb.Repository.Interfaces
 {
 	public interface IAccountRepository : IGenericRepository<Account>
 	{
-        Task<Account> GetUserByAccountNameAndPasswordHash(string userName, string passWord);
+        Task<Account> GetUserByAccountNameAndPassword(string userName, string passWord);
 
         Task<bool> CheckAccountNameExited(string userName);
 

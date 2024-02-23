@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/ShoppingWeb.Repository.csproj": {}
+    "/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Repository/ShoppingWeb.Repository.csproj": {}
   },
   "projects": {
-    "/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/ShoppingWeb.Repository.csproj": {
+    "/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Repository/ShoppingWeb.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/ShoppingWeb.Repository.csproj",
+        "projectUniqueName": "/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Repository/ShoppingWeb.Repository.csproj",
         "projectName": "ShoppingWeb.Repository",
-        "projectPath": "/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/ShoppingWeb.Repository.csproj",
+        "projectPath": "/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Repository/ShoppingWeb.Repository.csproj",
         "packagesPath": "/Users/thinhtran/.nuget/packages/",
-        "outputPath": "/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/",
+        "outputPath": "/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Repository/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/thinhtran/.nuget/NuGet/NuGet.Config"

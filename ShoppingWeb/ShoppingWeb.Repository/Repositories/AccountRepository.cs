@@ -18,7 +18,7 @@ namespace ShoppingWeb.Repository.Repositories
            return _dbContext.Accounts.AnyAsync(u => u.UserName == userName);
         }
 
-        public async Task<Account> GetUserByAccountNameAndPasswordHash(string userName, string passWord)
+        public async Task<Account> GetUserByAccountNameAndPassword(string userName, string passWord)
         {
             var user = await _dbContext.Accounts
                .FirstOrDefaultAsync(record => record.UserName == userName

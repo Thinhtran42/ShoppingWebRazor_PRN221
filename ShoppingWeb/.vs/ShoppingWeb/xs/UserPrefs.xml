@@ -1,5 +1,36 @@
-﻿<Properties>
+﻿<Properties StartupConfiguration="{F2DC98DA-0F92-453E-9699-77CF35AA2E43}|Default">
+  <MonoDevelop.Ide.ItemProperties.Tests.ShoppingWeb.Repository.Tests PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.ShoppingWeb.ShoppingWeb.Razor FirstBuild="True" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.ShoppingWeb.ShoppingWeb.Repository FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Tests.ShoppingWeb.Repository.Tests FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ShoppingWeb.Repository/UnitOfWork.cs">
+    <Files>
+      <File FileName="ShoppingWeb.Repository.Tests/SetupTest.cs" Line="1" Column="1" />
+      <File FileName="ShoppingWeb.Repository/UnitOfWork.cs" Line="1" Column="1" />
+      <File FileName="ShoppingWeb.Repository/Interfaces/IUnitOfWork.cs" />
+      <File FileName="ShoppingWeb.Repository/Interfaces/IAccountRepository.cs" />
+      <File FileName="ShoppingWeb.Repository/Repositories/AccountRepository.cs" />
+      <File FileName="ShoppingWeb.Repository/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" />
+      <File FileName="ShoppingWeb.Repository/Repositories/ProductRepository.cs" />
+      <File FileName="ShoppingWeb.Repository/Models/ShoppingWebRazorDatabaseContext.cs" />
+      <File FileName="ShoppingWeb.Repository/DenpendencyInjection.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ShoppingWeb" expanded="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="ShoppingWeb" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <DisabledProjects>
+    <String>ShoppingWeb.Repository/ShoppingWeb.RazorPage/ShoppingWeb.RazorPage.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

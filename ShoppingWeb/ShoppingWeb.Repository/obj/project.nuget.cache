@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dtlxqIAyvNui9fGO/OXmGP1ISrctD+md26mOr5Jl75XLI3wgBK+Vprxx2Ai7OEkMwgew+70JMr3sjiGgL4T1JA==",
+  "dgSpecHash": "OAm74Se8joTk6y7QWviz57PQU8B/gTvvk66lVap9X7ezqMWKHzF7+s74E4rRyt6m5pUfb7y9nT7wsdmU9JAq5w==",
   "success": true,
-  "projectFilePath": "/Users/thinhtran/Documents/PRN221/ShoppingWeb/ShoppingWeb.Repository/ShoppingWeb.Repository.csproj",
+  "projectFilePath": "/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Repository/ShoppingWeb.Repository.csproj",
   "expectedPackageFiles": [
     "/Users/thinhtran/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/thinhtran/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
