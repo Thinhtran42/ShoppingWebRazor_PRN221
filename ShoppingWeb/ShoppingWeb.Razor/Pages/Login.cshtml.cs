@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
-using ShoppingWeb.Razor.Controllers;
-using ShoppingWeb.Services.ViewModels.cs;
+using ShoppingWeb.Razor.ViewModels;
+using ShoppingWeb.Repository.Interfaces;
 
 namespace ShoppingWeb.Razor.Pages
 {
 	public class LoginModel : PageModel
     {
-        private readonly AccountController _accountController;
+        private readonly IUnitOfWork _unitOfWork;
 
         [BindProperty]
         public string UserName { get; set; } = "";
@@ -20,9 +17,9 @@ namespace ShoppingWeb.Razor.Pages
         public string Password { get; set; } = "";
 
         public string ErrorMessage { get; set; }
-        public LoginModel(AccountController accountController)
+        public LoginModel(IUnitOfWork unitOfWork)
         {
-            _accountController = accountController;
+            _unitOfWork = unitOfWork;
         }
 
         public IActionResult OnGet(string action)
@@ -50,13 +47,13 @@ namespace ShoppingWeb.Razor.Pages
                     ErrorMessage = "Username and Password must not be empty. Please try again.";
                     return Page();
                 }
-                var loginAccount = await _accountController.LoginAsync(UserName, Password);
+                var loginAccount = _unitOfWork.AccountRepository.Get(a => a.UserName == UserName && a.Password == Password).FirstOrDefault();
                 if (loginAccount == null)
                 {
                     ErrorMessage = "Invalid username or password. Please try again.";
                     return Page();
                 }
-                var loginUser = new AccountViewModel
+                var loginUser = new AccountViewmodel
                 {
                     AccountId = loginAccount.AccountId,
                     UserName = loginAccount.UserName,

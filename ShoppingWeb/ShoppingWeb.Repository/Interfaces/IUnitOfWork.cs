@@ -1,12 +1,14 @@
 ﻿using System;
+using ShoppingWeb.Repository.Models;
+using ShoppingWeb.Repository.Repositories;
+
 namespace ShoppingWeb.Repository.Interfaces
 {
 	public interface IUnitOfWork
 	{
-        public IAccountRepository AccountRepository { get; }
-        public IProductRepository ProductRepository { get; }
-
-        public Task<int> SaveChangeAsync();
+        GenericRepository<Account> AccountRepository { get; }
+        GenericRepository<Product> ProductRepository { get; }
+        void Save();
     }
 }
 

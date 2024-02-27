@@ -1,10 +1,10 @@
 ﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @using Newtonsoft.Json
-@using ShoppingWeb.Services.ViewModels.cs
+@using ShoppingWeb.Razor.ViewModels
 @{
     var loginUserJson = HttpContextAccessor.HttpContext?.Session.GetString("loginUser");
     var loginUser = loginUserJson != null && loginUserJson.Trim() != ""
-    ? JsonConvert.DeserializeObject<AccountViewModel>(loginUserJson) : null;
+    ? JsonConvert.DeserializeObject<AccountViewmodel>(loginUserJson) : null;
     var loginUserName = loginUser != null ? loginUser.UserName : null;
 }
 

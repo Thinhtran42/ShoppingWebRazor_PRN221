@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "bSZA7CGHGhc9yPsKwt0zvshrPeA5qFxT/BptIh+EOQxMfJGC0Okh8Ka2I/SVV8bR1ZZKkIOfas4IYMk3OtvvcQ==",
+  "dgSpecHash": "KwPo0oSZMJgqCnGszeW7f97wdJJkoYCo+CLFTU76sO6iwu2zEloCitPoHM/NAG3nbvt+0pbnanzEv2hG1T4eBQ==",
   "success": true,
   "projectFilePath": "/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/ShoppingWeb.Razor.csproj",
   "expectedPackageFiles": [
-    "/Users/thinhtran/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/thinhtran/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/thinhtran/.nuget/packages/microsoft.data.sqlclient/2.1.4/microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "/Users/thinhtran/.nuget/packages/microsoft.data.sqlclient.sni.runtime/2.1.1/microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

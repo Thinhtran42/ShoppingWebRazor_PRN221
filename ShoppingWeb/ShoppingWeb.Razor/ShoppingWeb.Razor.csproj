@@ -10,16 +10,13 @@
     <ProjectReference Include="..\ShoppingWeb.Repository\ShoppingWeb.Repository.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\ShoppingWeb.Services\ShoppingWeb.Services.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Controllers\" />
     <None Remove="Controllers\AccountController.csa" />
+    <None Remove="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

@@ -1,29 +1,65 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
 using ShoppingWeb.Repository.Interfaces;
 using ShoppingWeb.Repository.Models;
+using ShoppingWeb.Repository.Repositories;
 
 namespace ShoppingWeb.Repository
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private readonly ShoppingWebRazorDatabaseContext _dbContext;
-        private readonly IProductRepository _productRepo;
-        private readonly IAccountRepository _accountRepo;
+        private ShoppingWebRazorDatabaseContext context = new ShoppingWebRazorDatabaseContext();
+        private GenericRepository<Account> accountRepository;
+        private GenericRepository<Product> productRepository;
 
-        public UnitOfWork(ShoppingWebRazorDatabaseContext dbContext, IProductRepository productRepo, IAccountRepository accountRepo)
+        public GenericRepository<Account> AccountRepository
         {
-            _dbContext = dbContext;
-            _productRepo = productRepo;
-            _accountRepo = accountRepo;
+            get
+            {
+                if (accountRepository == null)
+                {
+                    accountRepository = new GenericRepository<Account>(context);
+                }
+                return accountRepository;
+            }
         }
 
-        public IAccountRepository AccountRepository => _accountRepo;
-
-        public IProductRepository ProductRepository => _productRepo;
-
-        public async Task<int> SaveChangeAsync()
+        public GenericRepository<Product> ProductRepository
         {
-            return await _dbContext.SaveChangesAsync();
+            get
+            {
+                if (productRepository == null)
+                {
+                    productRepository = new GenericRepository<Product>(context);
+                }
+                return productRepository;
+            }
+        }
+
+        public void Save()
+        {
+            context.SaveChanges();
+        }
+
+
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }
