@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using ShoppingWeb.Razor.Extensions;
-using ShoppingWeb.Repository;
-using ShoppingWeb.Repository.Interfaces;
 using ShoppingWeb.Repository.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,8 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddDatabase();
-builder.Services.AddUnitOfWork();
+builder.Services.AddCustomServices(builder.Configuration);
+
+builder.Services.AddDbContext<ShoppingWebRazorDatabaseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ShoppingDB")));
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddDistributedMemoryCache();

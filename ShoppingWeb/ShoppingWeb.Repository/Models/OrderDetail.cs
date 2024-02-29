@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShoppingWeb.Repository.Models
 {
     public partial class OrderDetail
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
         public int ProductId { get; set; }
         public decimal? UnitPrice { get; set; }

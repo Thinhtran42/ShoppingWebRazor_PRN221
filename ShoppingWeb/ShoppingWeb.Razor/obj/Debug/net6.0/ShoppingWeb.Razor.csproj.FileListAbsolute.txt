@@ -68,3 +68,5 @@
 /Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/obj/Debug/net6.0/ShoppingWeb.Razor.genruntimeconfig.cache
 /Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/obj/Debug/net6.0/ref/ShoppingWeb.Razor.dll
 /Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/bin/Debug/net6.0/Humanizer.dll
+/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll

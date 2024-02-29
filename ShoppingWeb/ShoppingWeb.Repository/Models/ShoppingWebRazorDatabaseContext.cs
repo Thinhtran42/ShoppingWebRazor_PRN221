@@ -24,15 +24,6 @@ namespace ShoppingWeb.Repository.Models
         public virtual DbSet<Product> Products { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=ShoppingWebRazorDatabase;User ID=sa;Password=Password.1;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
-            }
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>(entity =>
@@ -40,8 +31,8 @@ namespace ShoppingWeb.Repository.Models
                 entity.ToTable("Account");
 
                 entity.Property(e => e.AccountId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("AccountID");
+                    .HasColumnName("AccountID")
+                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.FullName).HasMaxLength(255);
 
@@ -55,8 +46,8 @@ namespace ShoppingWeb.Repository.Models
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.Property(e => e.CategoryId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("CategoryID");
+                    .HasColumnName("CategoryID")
+                    .ValueGeneratedOnAdd(); // Thay đổi ở đây
 
                 entity.Property(e => e.CategoryName).HasMaxLength(255);
 
@@ -66,8 +57,8 @@ namespace ShoppingWeb.Repository.Models
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.Property(e => e.CustomerId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("CustomerID");
+                    .HasColumnName("CustomerID")
+                    .ValueGeneratedOnAdd(); // Thay đổi ở đây
 
                 entity.Property(e => e.Address).HasMaxLength(255);
 
@@ -81,8 +72,8 @@ namespace ShoppingWeb.Repository.Models
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.Property(e => e.OrderId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("OrderID");
+                    .HasColumnName("OrderID")
+                    .ValueGeneratedOnAdd(); // Thay đổi ở đây
 
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
 
@@ -129,8 +120,8 @@ namespace ShoppingWeb.Repository.Models
             modelBuilder.Entity<Product>(entity =>
             {
                 entity.Property(e => e.ProductId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ProductID");
+                    .HasColumnName("ProductID")
+                    .ValueGeneratedOnAdd(); // Thay đổi ở đây
 
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
 
@@ -158,8 +149,8 @@ namespace ShoppingWeb.Repository.Models
             modelBuilder.Entity<Supplier>(entity =>
             {
                 entity.Property(e => e.SupplierId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("SupplierID");
+                    .HasColumnName("SupplierID")
+                    .ValueGeneratedOnAdd(); // Thay đổi ở đây
 
                 entity.Property(e => e.Address).HasMaxLength(255);
 

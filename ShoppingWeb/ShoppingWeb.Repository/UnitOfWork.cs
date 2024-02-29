@@ -8,9 +8,15 @@ namespace ShoppingWeb.Repository
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private ShoppingWebRazorDatabaseContext context = new ShoppingWebRazorDatabaseContext();
+        private readonly ShoppingWebRazorDatabaseContext _context;
         private GenericRepository<Account> accountRepository;
         private GenericRepository<Product> productRepository;
+        private GenericRepository<Customer> customerRepository;
+
+        public UnitOfWork(ShoppingWebRazorDatabaseContext context)
+        {
+            _context = context;
+        }
 
         public GenericRepository<Account> AccountRepository
         {
@@ -18,7 +24,7 @@ namespace ShoppingWeb.Repository
             {
                 if (accountRepository == null)
                 {
-                    accountRepository = new GenericRepository<Account>(context);
+                    accountRepository = new GenericRepository<Account>(_context);
                 }
                 return accountRepository;
             }
@@ -30,15 +36,27 @@ namespace ShoppingWeb.Repository
             {
                 if (productRepository == null)
                 {
-                    productRepository = new GenericRepository<Product>(context);
+                    productRepository = new GenericRepository<Product>(_context);
                 }
                 return productRepository;
             }
         }
 
+        public GenericRepository<Customer> CustomerRepository
+        {
+            get
+            {
+                if (customerRepository == null)
+                {
+                    customerRepository = new GenericRepository<Customer>(_context);
+                }
+                return customerRepository;
+            }
+        }
+
         public void Save()
         {
-            context.SaveChanges();
+            _context.SaveChanges();
         }
 
 
@@ -50,7 +68,7 @@ namespace ShoppingWeb.Repository
             {
                 if (disposing)
                 {
-                    context.Dispose();
+                    _context.Dispose();
                 }
             }
             this.disposed = true;
@@ -63,4 +81,3 @@ namespace ShoppingWeb.Repository
         }
     }
 }
-

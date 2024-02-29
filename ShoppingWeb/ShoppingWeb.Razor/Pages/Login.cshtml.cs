@@ -7,7 +7,7 @@ using ShoppingWeb.Repository.Interfaces;
 
 namespace ShoppingWeb.Razor.Pages
 {
-	public class LoginModel : PageModel
+    public class LoginModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -17,22 +17,17 @@ namespace ShoppingWeb.Razor.Pages
         public string Password { get; set; } = "";
 
         public string ErrorMessage { get; set; }
+
         public LoginModel(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult OnGet(string action)
+        public IActionResult OnGet()
         {
-            if (!string.IsNullOrEmpty(action))
+            if (HttpContext.Session.GetString("loginUser") != null)
             {
-                switch (action)
-                {
-                    case "logout":
-                        HttpContext.Session.Remove("loginUser");
-                        return RedirectToPage("/Index");
-                    default: break;
-                }
+                return RedirectToPage("/Index");
             }
 
             return Page();

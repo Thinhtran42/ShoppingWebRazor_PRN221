@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ShoppingWeb.Razor.Pages;
 
@@ -11,8 +12,19 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
-    public void OnGet()
+    public IActionResult OnGet(string action)
     {
+        if (!string.IsNullOrEmpty(action))
+        {
+            switch (action)
+            {
+                case "logout":
+                    HttpContext.Session.Remove("loginUser");
+                    return RedirectToPage("/Index");
+                default: break;
+            }
+        }
 
+        return Page();
     }
 }

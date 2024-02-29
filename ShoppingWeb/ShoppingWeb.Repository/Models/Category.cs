@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShoppingWeb.Repository.Models
 {
@@ -10,6 +11,7 @@ namespace ShoppingWeb.Repository.Models
             Products = new HashSet<Product>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CategoryId { get; set; }
         public string? CategoryName { get; set; }
         public string? Description { get; set; }
