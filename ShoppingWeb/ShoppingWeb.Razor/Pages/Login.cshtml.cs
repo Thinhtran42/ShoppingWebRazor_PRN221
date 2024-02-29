@@ -58,6 +58,11 @@ namespace ShoppingWeb.Razor.Pages
                 var loginUserJson = JsonConvert.SerializeObject(loginUser);
                 HttpContext.Session.SetString("loginUser", loginUserJson);
 
+                if (loginAccount.Type == "Staff")
+                {
+                    return RedirectToPage("/Pizza");
+                }
+
                 return RedirectToPage("/Index");
             }
             catch (Exception ex)

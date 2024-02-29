@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShoppingWeb.Repository.Models;
 
@@ -11,9 +12,10 @@ using ShoppingWeb.Repository.Models;
 namespace ShoppingWeb.Repository.Migrations
 {
     [DbContext(typeof(ShoppingWebRazorDatabaseContext))]
-    partial class ShoppingWebRazorDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20240229121222_002-Migration")]
+    partial class _002Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

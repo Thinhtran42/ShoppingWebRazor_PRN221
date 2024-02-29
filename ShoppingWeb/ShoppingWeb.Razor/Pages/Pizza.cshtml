@@ -1,0 +1,100 @@
+﻿@page
+@model ShoppingWeb.Razor.Pages.PizzaModel
+@using Newtonsoft.Json
+@using ShoppingWeb.Razor.ViewModels
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    var username = HttpContextAccessor.HttpContext?.Session.GetString("username");
+    var userFullname = HttpContextAccessor.HttpContext?.Session.GetString("userFullname");
+    var userType = HttpContextAccessor.HttpContext?.Session.GetString("userType");
+
+    var loginUserJson = HttpContextAccessor.HttpContext?.Session.GetString("loginUser");
+    var loginUser = loginUserJson != null && loginUserJson.Trim() != ""
+    ? JsonConvert.DeserializeObject<AccountViewmodel>(loginUserJson) : null;
+}
+@{
+    ViewData["Title"] = "Pizzas Page";
+}
+
+@if (!string.IsNullOrEmpty(loginUser.UserName) &&
+loginUser.Type == "Staff")
+{
+    <div class="">
+        <p class="display-4" style="font-size: 1.3rem; font-weight: 500;">Pizzas</p>
+        <div class="mt-2 pt-1">
+            <a href="CreateProduct" class="btn btn-success" role="button">
+                Create New
+            </a>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+                    {
+                        <tr>
+                            <td>@product.ProductName</td>
+                            <td>@product.UnitPrice</td>
+                            <td>@product.Description</td>
+                            <td>
+                                <img src="data:image/png;base64,@Convert.ToBase64String(product.ProductImage)"
+                                     style="height: 70px; width: 70px"
+                                     alt="Product Image">
+                            </td>
+                            <td>@(product.Category != null ? product.Category.CategoryName : "")</td>
+                            <td>
+                                @if (product.IsDeleted == true)
+                                {
+                                    <span class="text-danger">Deleted</span>
+                                }
+                                else
+                                {
+                                    <span class="text-success">Active</span>
+                                }
+                            </td>
+                            <td>
+                                <a href="EditProduct?productId=@product.ProductId" class="btn btn-primary"
+                                   style="width: 80px" role="button">
+                                    Edit
+                                </a>
+                                <br />
+                                @if (product.IsDeleted == false)
+                                {
+                                    <a href="DeleteProduct?productId=@product.ProductId" class="btn btn-danger mt-1"
+                                       style="width: 80px" role="button">
+                                        Delete
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="ActivateProduct?productId=@product.ProductId" class="btn btn-success mt-1"
+                                       style="width: 80px" role="button">
+                                        Activate
+                                    </a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+}
+else
+{
+    <p class="display-4" style="font-size: 1.3rem; font-weight: 500;">
+        Sorry. You are not allowed to access information of this page.
+    </p>
+}

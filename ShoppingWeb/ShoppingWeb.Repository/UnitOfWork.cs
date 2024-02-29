@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using ShoppingWeb.Repository.Interfaces;
+﻿using ShoppingWeb.Repository.Interfaces;
 using ShoppingWeb.Repository.Models;
 using ShoppingWeb.Repository.Repositories;
 
@@ -12,6 +10,7 @@ namespace ShoppingWeb.Repository
         private GenericRepository<Account> accountRepository;
         private GenericRepository<Product> productRepository;
         private GenericRepository<Customer> customerRepository;
+        private GenericRepository<Category> categoryRepository;
 
         public UnitOfWork(ShoppingWebRazorDatabaseContext context)
         {
@@ -51,6 +50,18 @@ namespace ShoppingWeb.Repository
                     customerRepository = new GenericRepository<Customer>(_context);
                 }
                 return customerRepository;
+            }
+        }
+
+        public GenericRepository<Category> CategoryRepository
+        {
+            get
+            {
+                if (categoryRepository == null)
+                {
+                    categoryRepository = new GenericRepository<Category>(_context);
+                }
+                return categoryRepository;
             }
         }
 

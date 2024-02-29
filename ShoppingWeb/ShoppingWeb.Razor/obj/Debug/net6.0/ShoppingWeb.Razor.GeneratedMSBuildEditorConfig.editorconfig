@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/Pages/CreateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -28,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/Pages/Pizza.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGl6emEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/thinhtran/Documents/GitHub/ShoppingWebRazor_PRN221/ShoppingWeb/ShoppingWeb.Razor/Pages/Register.cshtml]
