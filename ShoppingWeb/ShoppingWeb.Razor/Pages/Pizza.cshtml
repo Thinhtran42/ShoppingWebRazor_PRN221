@@ -64,14 +64,15 @@ loginUser.Type == "Staff"))
                                 }
                             </td>
                             <td>
-                                <a href="EditProduct?productId=@product.ProductId" class="btn btn-primary"
-                                   style="width: 80px" role="button">
+                                <div style="display: flex;">
+                                    <a href="EditProduct?productId=@product.ProductId" class="btn btn-primary"
+                                   style="width: 80px; margin-right: 10px" role="button">
                                     Edit
                                 </a>
                                 <br />
                                 @if (product.IsDeleted == false)
                                 {
-                                    <a href="DeleteProduct?productId=@product.ProductId" class="btn btn-danger mt-1"
+                                    <a href="DeleteProduct?productId=@product.ProductId" class="btn btn-danger"
                                        style="width: 80px" role="button">
                                         Delete
                                     </a>
@@ -83,6 +84,8 @@ loginUser.Type == "Staff"))
                                         Activate
                                     </a>
                                 }
+                                </div>
+
                             </td>
                         </tr>
                     }

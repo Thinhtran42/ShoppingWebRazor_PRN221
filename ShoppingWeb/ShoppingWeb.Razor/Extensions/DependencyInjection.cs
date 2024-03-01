@@ -1,6 +1,4 @@
-using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using ShoppingWeb.Repository;
 using ShoppingWeb.Repository.Interfaces;
 using ShoppingWeb.Repository.Models;
