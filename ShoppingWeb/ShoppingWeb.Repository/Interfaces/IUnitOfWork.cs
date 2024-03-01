@@ -9,6 +9,7 @@ namespace ShoppingWeb.Repository.Interfaces
         GenericRepository<Product> ProductRepository { get; }
         GenericRepository<Customer> CustomerRepository { get; }
         GenericRepository<Category> CategoryRepository { get; }
+        GenericRepository<Supplier> SupplierRepository { get; }
         void Save();
     }
 }

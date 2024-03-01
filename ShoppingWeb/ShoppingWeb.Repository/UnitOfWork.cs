@@ -11,6 +11,7 @@ namespace ShoppingWeb.Repository
         private GenericRepository<Product> productRepository;
         private GenericRepository<Customer> customerRepository;
         private GenericRepository<Category> categoryRepository;
+        private GenericRepository<Supplier> supplierRepository;
 
         public UnitOfWork(ShoppingWebRazorDatabaseContext context)
         {
@@ -62,6 +63,18 @@ namespace ShoppingWeb.Repository
                     categoryRepository = new GenericRepository<Category>(_context);
                 }
                 return categoryRepository;
+            }
+        }
+
+        public GenericRepository<Supplier> SupplierRepository
+        {
+            get
+            {
+                if (supplierRepository == null)
+                {
+                    supplierRepository = new GenericRepository<Supplier>(_context);
+                }
+                return supplierRepository;
             }
         }
 

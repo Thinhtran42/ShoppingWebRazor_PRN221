@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using ShoppingWeb.Repository.Interfaces;
 using ShoppingWeb.Repository.Models;
 
@@ -54,7 +55,27 @@ namespace ShoppingWeb.Razor.Pages
                     }
                 }
 
+                var loginUserJson = HttpContext.Session.GetString("loginUser");
+                var loginUser = new Account();
+                if (loginUserJson != null)
+                {
+                    loginUser = JsonConvert.DeserializeObject<Account>(loginUserJson);
+                }
+
+                // var supplier = new Supplier()
+                // {
+                //     CompanyName = "Pizza Company",
+                //     Address = "Ho Chi Minh city",
+                //     AccountId = loginUser.AccountId
+                // };
+
+                // _unitOfWork.SupplierRepository.Insert(supplier);
+                // _unitOfWork.Save();
+
+                var supplier = _unitOfWork.SupplierRepository.Get(supplier => supplier.AccountId == loginUser.AccountId).FirstOrDefault();
+
                 var products = _unitOfWork.ProductRepository.Get();
+
                 _unitOfWork.ProductRepository.Insert(new Product
                 {
                     ProductName = ProductName,
@@ -62,7 +83,7 @@ namespace ShoppingWeb.Razor.Pages
                     CategoryId = CategoryId,
                     UnitPrice = UnitPrice,
                     ProductImage = imageData,
-                    SupplierId = 1,
+                    SupplierId = supplier.SupplierId,
                     QuantityPerUnit = "",
                     IsDeleted = false
                 });
