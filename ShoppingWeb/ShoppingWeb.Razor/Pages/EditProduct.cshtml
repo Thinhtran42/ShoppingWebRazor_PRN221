@@ -1,0 +1,73 @@
+﻿@page
+@model ShoppingWeb.Razor.Pages.EditProductModel
+@{
+    ViewData["Title"] = "Edit Product";
+}
+<div class="">
+    <p class="display-4" style="font-size: 1.3rem; font-weight: 500;">Edit Product</p>
+    <div class="ps-5 ms-5">
+        <form method="post" enctype="multipart/form-data">
+            <div class="d-flex mt-2" style="font-size: 0.8rem;">
+                <div>
+                    <p class="px-2 ps-0 my-0" style="font-size: 0.8rem; font-weight: bolder;">Product Name</p>
+                    <p class="px-2 ps-0 my-0 mt-2 pt-1" style="font-size: 0.8rem; font-weight: bolder;">Product Description</p>
+                    <p class="px-2 ps-0 my-0 mt-2 pt-1" style="font-size: 0.8rem; font-weight: bolder;">Category</p>
+                    <p class="px-2 ps-0 my-0 mt-2 pt-1" style="font-size: 0.8rem; font-weight: bolder;">Unit Price</p>
+                    <p class="px-2 ps-0 my-0 mt-2 pt-1" style="font-size: 0.8rem; font-weight: bolder;">Product Image</p>
+                </div>
+                <div class="mx-3">
+                    <div>
+                        <input type="text" name="ProductName" style="border-radius: 3px; border: 1px solid #dfe0e2;" class="px-2" value="@Model.Product.ProductName" />
+                    </div>
+                    <div>
+                        <input type="text" name="ProductDescription" style="border-radius: 3px; border: 1px solid #dfe0e2;" class="px-2 mt-2" value="@Model.Product.Description" />
+                    </div>
+                    <div>
+                        <select name="CategoryId" style="border-radius: 3px; border: 1px solid #dfe0e2;" class="px-2 mt-2">
+                            @foreach (var category in Model.Categories)
+                            {
+                                <option value="@category.CategoryId" selected="@(Model.Product.CategoryId == category.CategoryId)">@category.CategoryName</option>
+                            }
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" name="UnitPrice" style="border-radius: 3px; border: 1px solid #dfe0e2;" class="px-2 mt-2" value="@Model.Product.UnitPrice" />
+                    </div>
+                    <div>
+                        <input type="file" name="ProductImage" accept="image/*"
+                               style="border-radius: 3px; border: 1px solid #dfe0e2;" class="px-2 mt-2"
+                               onchange="previewImage(this)" />
+                        <img id="imagePreview" style="width: 100px; height: 100px; margin-top: 15px; display: @(Model.Product.ProductImage != null ? "block" : "none")"
+                             src="data:image/png;base64,@Convert.ToBase64String(Model.Product.ProductImage)"
+                             alt="Product Image" />
+                    </div>
+                    <div class="mt-2 pt-1">
+                        <button type="submit" class="btn btn-primary border-0" style="background-color: #204ac9; color: #fff; border-radius: 5px">
+                            Update Product
+                        </button>
+                        <a asp-page="/Pizza" class="btn btn-secondary ms-2">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function previewImage(input) {
+        var imagePreview = document.getElementById('imagePreview');
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                imagePreview.src = e.target.result;
+                imagePreview.style.display = 'block';
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            imagePreview.style.display = 'none';
+        }
+    }
+</script>

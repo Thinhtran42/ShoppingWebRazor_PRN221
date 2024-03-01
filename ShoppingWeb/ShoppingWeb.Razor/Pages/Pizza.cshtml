@@ -17,8 +17,8 @@
     ViewData["Title"] = "Pizzas Page";
 }
 
-@if (!string.IsNullOrEmpty(loginUser.UserName) &&
-loginUser.Type == "Staff")
+@if (loginUser != null && (!string.IsNullOrEmpty(loginUser.UserName) &&
+loginUser.Type == "Staff"))
 {
     <div class="">
         <p class="display-4" style="font-size: 1.3rem; font-weight: 500;">Pizzas</p>

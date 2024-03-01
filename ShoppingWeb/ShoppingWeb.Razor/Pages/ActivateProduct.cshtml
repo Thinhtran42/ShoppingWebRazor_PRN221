@@ -1,0 +1,18 @@
+﻿@page
+@model ShoppingWeb.Razor.Pages.ActivateProductModel
+@{
+    ViewData["Title"] = "Activate Product";
+}
+
+<p class="display-4" style="font-size: 1.3rem; font-weight: 500;">
+    Activate Product
+</p>
+
+<div>
+    <p>Are you sure you want to activate this product?</p>
+    <form method="post">
+        <input type="hidden" name="ProductId" value="@Model.ProductId" />
+        <button type="submit" class="btn btn-success">Activate</button>
+        <a asp-page="/Pizza" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
